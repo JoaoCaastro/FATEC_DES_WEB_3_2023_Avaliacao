@@ -1,10 +1,7 @@
-from django import forms
-from .models import modelAluno
+from .models import ModelAluno
+from django.forms import ModelForm
 
-class modelAlunoForm(forms.ModelForm):
+class ModelAlunoForm(ModelForm):
     class Meta:
-        model = modelAluno
-        fields = ('nomeCompleto', 'professores')
-        widgets = {
-            'professores': forms.Select(choices=[('1', 'Orlando'), ('2','Thiago')])
-        }
+        model = ModelAluno
+        fields = ['aluno','professor']

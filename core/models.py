@@ -1,5 +1,9 @@
 from django.db import models
 
-class modelAluno(models.Model):
-    nomeCompleto = models.CharField('nomeCompleto', max_length=150)
-    professores = models.CharField('professores', max_length=150)
+class ModelAluno(models.Model):
+    aluno = models.CharField(max_length=150)
+    select = [
+        ('1', 'Orlando'),
+        ('2', 'Mendes')
+    ]
+    professor = models.CharField(max_length=150, choices=select)
